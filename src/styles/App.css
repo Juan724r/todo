@@ -1,3 +1,14 @@
-.app {
-    justify-content: center;
+.app{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+.tasks{
+    border: 4px solid black;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }

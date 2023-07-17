@@ -1,0 +1,9 @@
+.tasklist{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Изменил значение на flex-start */
+  height: 100%;
+  overflow-y: auto;
+
+}

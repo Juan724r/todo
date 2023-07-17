@@ -1,15 +1,16 @@
-import React from "react";
-import "../Header/Header.css"
-import Creator from "../Creator/Creator"
-import ThemeChange from "../ThemeChange/ThemeCange"
+import "./Header.css"
+import ThemeChange from "../ThemeChange/ThemeChange"
+import Logo from "../Logo/Logo"
 
-function Header() {
-    return ( 
-        <div className="header">
-            <Creator/>
-            <ThemeChange/>
-        </div>
-     );
-}
+function Header({theme, onThemeToggle }) {
+    return (
+      <header className='header'>
+        <ThemeChange theme={theme} onThemeToggle={onThemeToggle} />
+        <Logo />
+      </header>
+    );
+  }
+  
+  export default Header;
 
-export default Header;
+

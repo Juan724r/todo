@@ -11,13 +11,13 @@ function TaskInput({ onAddTask }) {
   
     const handleAddTask = () => {
       if (taskTitle.trim()) {
-        if (taskTitle.length <= 20){
+        if (taskTitle.length <= 50){
           onAddTask(taskTitle);
           setTaskTitle('');
           setErrorMessage(null);
         }
         else {
-          setErrorMessage('Максимальная длина - 20 символов');
+          setErrorMessage('Максимальная длина - 50 символов');
         }
       }
     };
@@ -29,18 +29,26 @@ function TaskInput({ onAddTask }) {
       }
     };
 
+    const handleKeyDown = (e) => {
+      if (e.key === 'Enter') {
+        handleAddTask();
+      }
+    };
+
     const placeholderText = errorMessage ? errorMessage : 'Введите задачу';
 
     return (
       <div className='taskinput'>
         <input
+          className="inputfield"
           type="text"
           value={taskTitle}
           onChange={handleInputChange}
           onBlur={handleBlur}
+          onKeyDown={handleKeyDown}
           placeholder={placeholderText}
         />
-        <a class="btn-9" onClick={handleAddTask}>Добавить</a>
+        <a className="btn-9" onClick={handleAddTask}>Добавить</a>
       </div>
     );
   }

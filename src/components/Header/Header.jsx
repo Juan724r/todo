@@ -5,8 +5,8 @@ import Logo from "../Logo/Logo"
 function Header({theme, onThemeToggle }) {
     return (
       <header className='header'>
-        <ThemeChange theme={theme} onThemeToggle={onThemeToggle} />
         <Logo />
+        <ThemeChange theme={theme} onThemeToggle={onThemeToggle} />
       </header>
     );
   }

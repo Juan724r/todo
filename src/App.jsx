@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import "./styles/App.css"
 import "./styles/themes.css";
-import Logo from './components/Logo/Logo';
 
 import TaskList from './components/TaskList/TaskList';
 import TaskInput from './components/TaskInput/TaskInput';

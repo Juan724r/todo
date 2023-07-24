@@ -1,13 +1,20 @@
 import "./TaskItem.css"
+import React, { useState } from 'react';
+
 function TaskItem({ task, onDelete }) {
-    const handleDelete = () => {
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const handleDelete = () => {
+    setIsDeleting(true);
+    setTimeout(() => {
       onDelete(task.id);
-    };
+    }, 300);
+  };
   
     return (
-      <div className='taskitem'>
-        <span>{task.title}</span>
-        <button onClick={handleDelete}>Удалить</button>
+      <div className={`taskitem ${isDeleting ? 'fade-out' : ''}`}>
+        <span className="task">{task.title}</span>
+        <a className="deleteBtn" onClick={handleDelete}>Удалить</a>
       </div>
     );
   }

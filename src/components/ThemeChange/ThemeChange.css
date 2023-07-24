@@ -2,12 +2,12 @@
     user-select: none;
     text-decoration: none;
     display: inline-block;
-    width: 16%;
     height: 5%;
     line-height: 45px;
     border-radius: 45px;
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
+    padding: 0 10px 0 10px;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 3px;
@@ -17,6 +17,8 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
     transition: .3s;
     margin-top: 1%;
+    margin-right: 8%;
+    cursor: pointer;
   }
   
   .themechange.active {

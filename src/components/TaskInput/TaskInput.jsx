@@ -48,7 +48,7 @@ function TaskInput({ onAddTask }) {
           onKeyDown={handleKeyDown}
           placeholder={placeholderText}
         />
-        <a className="btn-9" onClick={handleAddTask}>Добавить</a>
+        <a href="#" className="btn-9" onClick={handleAddTask}>Добавить</a>
       </div>
     );
   }

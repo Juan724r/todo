@@ -3,7 +3,7 @@ import "./ThemeChange.css"
 function ThemeChange({theme, onThemeToggle }) {
   return (
     <div className={`themechange ${theme === 'dark' ? 'active' : ''}`}>
-        <a className="themelink" onClick={onThemeToggle}>
+        <a href="#" className="themelink" onClick={onThemeToggle}>
           <div>Сменить тему</div>
         </a>
     </div>

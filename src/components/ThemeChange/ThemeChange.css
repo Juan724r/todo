@@ -1,4 +1,5 @@
 .themechange {
+    text-decoration: none;
     user-select: none;
     text-decoration: none;
     display: inline-block;
@@ -28,3 +29,13 @@
     transform: translateY(-7px);
   }
 
+  .themelink {
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .themechange{
+      margin-top: 2%;
+    }
+  }

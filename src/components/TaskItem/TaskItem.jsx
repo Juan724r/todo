@@ -14,7 +14,7 @@ function TaskItem({ task, onDelete }) {
     return (
       <div className={`taskitem ${isDeleting ? 'fade-out' : ''}`}>
         <span className="task">{task.title}</span>
-        <a href="##" className="deleteBtn" onClick={handleDelete}>Удалить</a>
+        <a href="##" className="deleteBtn" onClick={handleDelete}>🗑️</a>
       </div>
     );
   }

@@ -49,6 +49,7 @@
 }
 
 .deleteBtn{
+  text-decoration: none;
   background-color: rgb(255, 84, 84);
   border-radius: 20px;
   color: white;

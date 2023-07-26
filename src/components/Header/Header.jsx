@@ -1,11 +1,11 @@
 import "./Header.css"
+import Title from "../Title/Title";
 import ThemeChange from "../ThemeChange/ThemeChange"
-import Logo from "../Logo/Logo"
 
 function Header({theme, onThemeToggle }) {
     return (
       <header className='header'>
-        <Logo />
+        <Title/>
         <ThemeChange theme={theme} onThemeToggle={onThemeToggle} />
       </header>
     );

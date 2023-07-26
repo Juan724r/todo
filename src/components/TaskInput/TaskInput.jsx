@@ -25,7 +25,7 @@ function TaskInput({ onAddTask }) {
         }
         setTimeout(() => {
           inputElement.classList.remove('shake');
-        }, 2200);
+        }, 200);
       }
     }
   };

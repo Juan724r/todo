@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import "./styles/App.css"
 import "./styles/themes.css";
 
+import Logo from './components/Logo/Logo';
 import TaskList from './components/TaskList/TaskList';
 import TaskInput from './components/TaskInput/TaskInput';
 
@@ -31,12 +32,25 @@ function App() {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
+  const EditTask = (taskId, newTitle) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, title: newTitle } : task
+      )
+    );
+  };
+
   return (
     <div className={`app ${theme}`}>
       <Header theme={theme} onThemeToggle={toggleTheme} />
+      <Logo/>
       <div className='tasks'>
         <TaskInput onAddTask={addTask} />
-        <TaskList tasks={tasks} onDeleteTask={deleteTask} />
+        <TaskList 
+        tasks={tasks} 
+        onDeleteTask={deleteTask} 
+        onEditTask={EditTask}
+        />
       </div>
     </div>
   );

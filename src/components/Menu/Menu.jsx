@@ -1,7 +1,6 @@
-import React from 'react';
 import "./Menu.css"
 
-function Header({theme, onThemeToggle }) {
+function Menu({theme, onThemeToggle }) {
     return (
       <div className="menu">
         
@@ -9,6 +8,6 @@ function Header({theme, onThemeToggle }) {
     );
   }
   
-  export default Header;
+  export default Menu;
 
 

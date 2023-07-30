@@ -1,0 +1,33 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+	   width="300" height="300" viewBox="0 0 300 300" >  
+
+<defs>
+  <linearGradient id="Lgrad" x1="0%" x2="100%" y1="0%" y2="0%" >
+   <stop stop-color="yellow" offset="0.1">
+   <animate
+    attributeName="stop-color"
+	dur="6s"
+	values="yellow;orange;yellow"
+	begin="0s"
+	
+	repeatCount="indefinite"  /> 
+   </stop>
+   <stop stop-color="orange" offset="1">
+    <animate
+	 attributeName="stop-color"
+	 dur="3s"
+	 values="orange;yellow;orange"
+	 begin="0s"
+	 	 repeatCount="indefinite" /> 
+   </stop>
+   
+  
+  </linearGradient>
+ </defs>
+ <g id="sun">
+<circle cx="150" cy="150" r="100"   stroke="url(#Lgrad)" stroke-width="100" stroke-dasharray="7.85" />
+<circle cx="150" cy="150" r="100"  fill="url(#Lgrad)" stroke="yellow"  /> 
+ </g> 
+   <animateTransform xlink:href="#sun" attributeName="transform" type="rotate" dur="10s" values="0 150 150;360 150 150" repeatCount="indefinite" />
+</svg>	 

@@ -6,12 +6,15 @@
   animation: fadeIn 0.5s;
   height: 7%;
   min-height: 7%;
-  }
-  
-.taskitem span {
-  margin-left: 10px;
-  flex-grow: 1;
+  position: relative; /* Добавляем позиционирование для дочерних элементов */
+  transition: transform 0.3s; /* Добавляем анимацию для свойства transform */
 }
+
+.taskitem:hover {
+  transform: translateX(5px); /* Сдвигаем элемент на 10 пикселей вправо при наведении курсора */
+}
+
+
 
 @keyframes fadeIn {
   from {
@@ -35,41 +38,71 @@
   }
 }
 
+
+@keyframes BtnfadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .taskitem.fade-out {
   animation: fadeOut 0.3s;
 }
 
-.task{
-  border: 2px solid  rgb(38, 41, 54);
+.task {
+  text-align: center;
+  border: 2px solid rgb(38, 41, 54);
   background-color: white;
   border-radius: 20px;
-  height:100%;
-  width: 100%;
-  text-align: center;
-  margin-right: 1%;
-  padding: 0% 1% 0 1%;
-}
-
-.editButtons{
   height: 100%;
-  width: 15%;
-  display: flex;
-  flex-direction: row;
+  flex-grow: 1; /* Добавляем flex-grow для текста, чтобы он занимал оставшееся свободное место */
+  padding: 0 1%;
+  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+  text-overflow: ellipsis; /* Добавляем многоточие для текста, который не помещается в одну строку */
+  overflow: hidden; /* Скрываем часть текста, которая выходит за пределы элемента */
+
+
 }
 
-.editBtn,.saveBtn{
-  margin-left: 10%;
+.edit-buttons {
+  animation: BtnfadeOut 0.8s ease-out;
+  height: 100%;
+  display: flex;
+  margin-left: auto; /* Перемещаем кнопки вправо, чтобы они были справа от текста */
+  width: 13%;
+}
+
+.editBtn, .saveBtn, .deleteBtn {
   text-decoration: none;
   background-color: rgb(84, 255, 172);
   border-radius: 20px;
-  padding: 1% 2% 1% 2%;
   cursor: pointer;
+  margin-left: 8px;     
+  height: 90%;      
+  width: 50%;  
+  text-align: center;      
+  padding-top: 6%;  
 }
-.deleteBtn {
-  margin-left: 10%;
-  text-decoration: none;
-  background-color: rgb(255, 84, 84);
-  border-radius: 20px;
-  padding: 1% 2% 1% 2%;
-  cursor: pointer;
+
+.deleteBtn{
+  background-color: #da3b3b;
 }
+
+@media screen and (max-width: 768px) {
+  .edit-buttons {
+    height: 100%;
+    display: flex;
+    margin-left: auto; 
+    width: 25%;
+  }
+  .editBtn, .saveBtn, .deleteBtn {
+         
+    height: 77%;      
+    width: 50%;  
+    padding-top: 15%;  
+  }
+}
+

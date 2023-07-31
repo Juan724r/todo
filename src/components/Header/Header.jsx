@@ -8,7 +8,6 @@ function Header({theme, onThemeToggle }) {
       <header className='header'>
         <Title/>
         <ThemeChange theme={theme} onThemeToggle={onThemeToggle} />
-        <Menu theme={theme} onThemeToggle={onThemeToggle}/>
       </header>
     );
   }

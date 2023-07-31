@@ -1,30 +1,28 @@
 .themechange {
-    text-decoration: none;
     user-select: none;
-    text-decoration: none;
     display: inline-block;
-    height: 5%;
-    line-height: 45px;
-    border-radius: 45px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    padding: 0 10px 0 10px;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 3px;
-    font-weight: 600;
-    color: white;
+    border-radius: 50%;
     background: #68a4ff;
+    padding: 7px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
-    transition: .3s;
     cursor: pointer;
+    width: 3%;
+    .icon{
+      fill: white;
+      transition: 0.3s linear;
+      animation: spinback 0.3s;
+    }
   }
   
   .themechange.active {
     background: #2e77e5;
     box-shadow: 0 15px 20px rgba(46, 95, 229, 0.4);
-    color: white;
-    transform: translateY(-7px);
+
+
+    .icon{
+      fill: black;
+      animation: spin 0.3s;
+    }
   }
 
   .themelink {
@@ -34,6 +32,35 @@
   
   @media screen and (max-width: 768px) {
     .themechange{
-      margin-top: 2%;
+      margin-top: 1%;
+      padding: 0;
+      width: 10%;
+      border-radius: 45px;
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+    .icon{
+      padding: 0;
+    }
+  }
+
+
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+
+
+  @keyframes spinback {
+    from {
+      transform: rotate(180deg);
+    }
+    to {
+      transform: rotate(0deg);
     }
   }

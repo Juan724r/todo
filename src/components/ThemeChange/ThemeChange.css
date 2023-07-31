@@ -7,7 +7,9 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
     cursor: pointer;
     width: 3%;
+
     .icon{
+      user-select: none;
       fill: white;
       transition: 0.3s linear;
       animation: spinback 0.3s;

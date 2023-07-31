@@ -12,7 +12,14 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    const storedTasks = window.localStorage.getItem('tasks');
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
   
   const toggleTheme = () => {

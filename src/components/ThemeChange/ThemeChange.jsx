@@ -5,7 +5,6 @@ function ThemeChange({theme, onThemeToggle }) {
   return (
     <div className={`themechange ${theme === 'dark' ? 'active' : ''}`}>
         <a href="##" className="themelink" onClick={onThemeToggle}>
-          {/* <div>Change Theme</div> */}
           <Icon className="icon"/>
         </a>
     </div>

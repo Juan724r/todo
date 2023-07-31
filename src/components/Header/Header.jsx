@@ -1,7 +1,6 @@
 import "./Header.css"
 import Title from "../Title/Title";
 import ThemeChange from "../ThemeChange/ThemeChange"
-import Menu from "../Menu/Menu";
 
 function Header({theme, onThemeToggle }) {
     return (

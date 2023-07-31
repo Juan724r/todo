@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import "./styles/App.css"
 import "./styles/themes.css";
@@ -11,6 +11,10 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [tasks, setTasks] = useState([]);
 
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+  
   const toggleTheme = () => {
     if (theme === 'light') {
       document.body.classList.remove('light-theme');

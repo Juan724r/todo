@@ -4,21 +4,21 @@ import "./TaskItem.css";
 function TaskItem({ task, onDelete, onEditTask }) {
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [editedTitle, setEditedTitle] = useState(task.title); // Добавляем состояние для хранения отредактированной задачи
-  const [isButtonsVisible, setIsButtonsVisible] = useState(false); // Добавляем состояние для отслеживания открытости/закрытости кнопок редактирования
+  const [editedTitle, setEditedTitle] = useState(task.title); 
+  const [isButtonsVisible, setIsButtonsVisible] = useState(false); 
 
   const handleEditClick = () => {
     setIsEditing(true);
-    setIsButtonsVisible(false); // Закрываем кнопки редактирования при открытии редактирования
+    setIsButtonsVisible(false); 
   };
 
   const handleSaveClick = () => {
-    onEditTask(task.id, editedTitle); // Передаем отредактированный заголовок задачи вместо editedTask
+    onEditTask(task.id, editedTitle); 
     setIsEditing(false);
   };
 
   const handleInputChange = (e) => {
-    setEditedTitle(e.target.value); // Обновляем состояние editedTitle при изменении значения в поле ввода
+    setEditedTitle(e.target.value); 
   };
 
   const handleDelete = () => {
@@ -28,14 +28,17 @@ function TaskItem({ task, onDelete, onEditTask }) {
     }, 300);
   };
   
-  const handleButtonsToggle = () => {
-    setIsButtonsVisible((prevIsButtonsVisible) => !prevIsButtonsVisible);
+  const handleButtonsOn = () => {
+    setIsButtonsVisible(true);
+  };
+  const handleButtonsOff = () => {
+    setIsButtonsVisible(false);
   };
 
   return (
-    <div className={`taskitem ${isDeleting ? 'fade-out' : ''}`} onMouseEnter={handleButtonsToggle} onMouseLeave={handleButtonsToggle}>
+    <div className={`taskitem ${isDeleting ? 'fade-out' : ''}`} onClick={handleButtonsOn} onBlur={handleButtonsOff}>
       {isEditing ? (
-        <input className="task" type="text" value={editedTitle} onChange={handleInputChange} />
+        <input className="task editing" type="text" value={editedTitle} onChange={handleInputChange} />
       ) : (
         <input className="task" value={task.title} readOnly/>
       )}

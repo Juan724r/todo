@@ -11,7 +11,7 @@
 }
 
 .taskitem:hover {
-  transform: translateX(5px); /* Сдвигаем элемент на 10 пикселей вправо при наведении курсора */
+  transform: translateY(-3px);
 }
 
 
@@ -63,10 +63,11 @@
   white-space: nowrap; /* Запрещаем перенос текста на новую строку */
   text-overflow: ellipsis; /* Добавляем многоточие для текста, который не помещается в одну строку */
   overflow: hidden; /* Скрываем часть текста, которая выходит за пределы элемента */
-
-
 }
 
+.editing{
+  border: 2px solid rgb(255, 119, 0);
+}
 .edit-buttons {
   animation: BtnfadeOut 0.8s ease-out;
   height: 100%;

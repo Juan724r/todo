@@ -28,24 +28,19 @@ function TaskItem({ task, onDelete, onEditTask }) {
     }, 300);
   };
   
-  const handleButtonsOn = () => {
-    setIsButtonsVisible(true);
-  };
-  const handleButtonsOff = () => {
-    setIsButtonsVisible(false);
-  };
+
 
   const handleButtonsState = () => {
     setIsButtonsVisible(!isButtonsVisible);
   };
 
-  function moveCaretToEnd(inputObject){
-    if (inputObject.selectionStart){
-      var end = inputObject.value.length;
-      inputObject.setSelectionRange(end,end);
-      inputObject.focus();
-    }
-  }
+  // function moveCaretToEnd(inputObject){
+  //   if (inputObject.selectionStart){
+  //     var end = inputObject.value.length;
+  //     inputObject.setSelectionRange(end,end);
+  //     inputObject.focus();
+  //   }
+  // }
 
   return (
     <div className={`taskitem ${isDeleting ? 'fade-out' : ''}`} >

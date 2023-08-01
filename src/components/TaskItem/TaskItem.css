@@ -6,8 +6,8 @@
   animation: fadeIn 0.5s;
   height: 7%;
   min-height: 7%;
-  position: relative; /* Добавляем позиционирование для дочерних элементов */
-  transition: transform 0.3s; /* Добавляем анимацию для свойства transform */
+  position: relative;
+  transition: transform 0.3s;
 }
 
 .taskitem:hover {
@@ -58,11 +58,11 @@
   background-color: white;
   border-radius: 20px;
   height: 100%;
-  flex-grow: 1; /* Добавляем flex-grow для текста, чтобы он занимал оставшееся свободное место */
+  flex-grow: 1;
   padding: 0 1%;
-  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
-  text-overflow: ellipsis; /* Добавляем многоточие для текста, который не помещается в одну строку */
-  overflow: hidden; /* Скрываем часть текста, которая выходит за пределы элемента */
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+  overflow: hidden; 
 }
 
 .editing{
@@ -72,8 +72,7 @@
   animation: BtnfadeOut 0.8s ease-out;
   height: 100%;
   display: flex;
-  margin-left: auto; /* Перемещаем кнопки вправо, чтобы они были справа от текста */
-  width: 13%;
+  margin-left: auto; 
 }
 
 .editBtn, .saveBtn, .deleteBtn {

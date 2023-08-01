@@ -35,12 +35,24 @@ function TaskItem({ task, onDelete, onEditTask }) {
     setIsButtonsVisible(false);
   };
 
+  const handleButtonsState = () => {
+    setIsButtonsVisible(!isButtonsVisible);
+  };
+
+  function moveCaretToEnd(inputObject){
+    if (inputObject.selectionStart){
+      var end = inputObject.value.length;
+      inputObject.setSelectionRange(end,end);
+      inputObject.focus();
+    }
+  }
+
   return (
-    <div className={`taskitem ${isDeleting ? 'fade-out' : ''}`} onClick={handleButtonsOn} onBlur={handleButtonsOff}>
+    <div className={`taskitem ${isDeleting ? 'fade-out' : ''}`} >
       {isEditing ? (
-        <input className="task editing" type="text" value={editedTitle} onChange={handleInputChange} />
+        <input className="task editing" type="text" value={editedTitle} onClick={handleButtonsState} onChange={handleInputChange} />
       ) : (
-        <input className="task" value={task.title} readOnly/>
+        <input className="task" value={task.title} readOnly onClick={handleButtonsState}/>
       )}
       
       {isButtonsVisible && (
